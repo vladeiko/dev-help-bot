@@ -1,0 +1,54 @@
+{
+  "name": "dev-help-bot",
+  "version": "0.0.1",
+  "description": "Bot which helps with development (specially for WCMS team)",
+  "scripts": {
+    "start": "npm run prepare && npx nodemon",
+    "lint": "eslint --max-warnings=0",
+    "test": "npm run lint && jest",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/vladeiko/dev-help-bot.git"
+  },
+  "author": "vladeiko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vladeiko/dev-help-bot/issues"
+  },
+  "homepage": "https://github.com/vladeiko/dev-help-bot#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts}": [
+      "npm run lint",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.1",
+    "@types/node": "^20.2.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/experimental-utils": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.40.0",
+    "eslint-plugin-import": "^2.27.5",
+    "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "lint-staged": "^13.2.2",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.4"
+  }
+}
